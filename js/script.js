@@ -13,7 +13,7 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 // The empty paragraph where messages will appear when the player guesses a letter
 const message = document.querySelector(".message");
 // The hidden button that will appear prompting the player to play again
-const playAgainButton = document.querySelector(".play-again hide");
+const playAgainButton = document.querySelector(".play-again");
 
 const word = "magnolia";
 const guessedLetters = [];
@@ -40,7 +40,7 @@ guessLetterButton.addEventListener("click", function (e) {
     const guess = letterInput.value;
     // make sure that it is a single letter
     const goodGuess = validateInput(guess);
-    console.log(goodGuess);
+    // console.log(goodGuess);
 
     if (goodGuess) {
         makeGuess(guess);
@@ -65,7 +65,7 @@ const validateInput = function (input) {
         // We finally got a single letter, yay!
         return input;
     }
-}
+};
 
 const makeGuess = function (guess) {
     guess = guess.toUpperCase();
@@ -76,3 +76,4 @@ const makeGuess = function (guess) {
         console.log(guessedLetters);
     }
 };
+
