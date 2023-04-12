@@ -14,6 +14,8 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 // The hidden button that will appear prompting the player to play again
 const playAgainButton = document.querySelector(".play-again");
+// I want to be able to hide the form whem the game is over
+const hideForm = document.querySelector(".type-instruction");
 
 let word = "magnolia";
 let guessedLetters = [];
@@ -155,6 +157,8 @@ const startOver = function () {
   remainingGuessesElement.classList.add("hide");
   guessedLettersElement.classList.add("hide");
   playAgainButton.classList.remove("hide");
+  letterInput.classList.add("hide");
+  hideForm.classList.add("hide");
 };
 
 playAgainButton.addEventListener("click", function () {
@@ -173,4 +177,6 @@ playAgainButton.addEventListener("click", function () {
     playAgainButton.classList.add("hide");
     remainingGuessesElement.classList.remove("hide");
     guessedLettersElement.classList.remove("hide");
+    letterInput.classList.remove("hide");
+    hideForm.classList.remove("hide");
 });
